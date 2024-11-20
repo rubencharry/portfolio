@@ -1,0 +1,146 @@
+---
+import Laravel from "./icons/Laravel.astro";
+import Html from "./icons/Html.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import CSS from "./icons/CSS.astro";
+import Jquery from "./icons/Jquery.astro";
+import MySql from "./icons/MySql.astro";
+import php from "./icons/php.astro";
+import WordPress from "./icons/WordPress.astro";
+import Elementor from "./icons/Elementor.astro";
+
+const TAGS = {
+    LARAVEL: {
+        name: "Laravel",
+        class: "bg-white/5",
+        icon: Laravel,
+    },
+
+    HTML: {
+        name: "HTML",
+        class: "bg-white/5",
+        icon: Html,
+    },
+
+    BOOTSTRAP: {
+        name: "Bootstrap",
+        class: "bg-white/5",
+        icon: Bootstrap,
+    },
+
+    CSS: {
+        name: "CSS",
+        class: "bg-white/5",
+        icon: CSS,
+    },
+
+    JQUERY: {
+        name: "Jquery",
+        class: "bg-white/5",
+        icon: Jquery,
+    },
+
+    MYSQL: {
+        name: "MySql",
+        class: "bg-white/5",
+        icon: MySql,
+    },
+
+    PHP: {
+        name: "MySql",
+        class: "bg-white/5",
+        icon: php,
+    },
+
+    WORDPRESS: {
+        name: "WordPress",
+        class: "bg-white/5",
+        icon: WordPress,
+    },
+
+    ELEMENTOR: {
+        name: 'Elementor',
+        class: "bg-white/5",
+        icon: Elementor,
+    }
+};
+
+const PROJECTS = [
+    {
+        title: "Hermes - Plataforma Universidad Iberoamericana",
+        description:
+            "Plataforma diseñada para los administrativos de la universidad Iberoamericana, desarrollada con Laravel.  ",
+        link: "https://moocs.ibero.edu.co/hermes/front/public/index.php",
+        github: "",
+        image: "../projects/Proyecto Hermes.jpg",
+        tags: [TAGS.HTML, TAGS.BOOTSTRAP ,TAGS.LARAVEL, TAGS.CSS, TAGS.JQUERY, TAGS.MYSQL],
+    },
+    {
+        title: "CRED - Centro de recursos educativos Universidad Iberoamericana",
+        description:
+            "Biblioteca de recursos educativos generador por los docentes de la universidad, desarrollada con Laravel.",
+        link: "https://moocs.ibero.edu.co/cred2.0/cred-prueba/public/index.php/recursos",
+        github: "",
+        image: "../projects/Cred.jpg",
+        tags: [TAGS.HTML, TAGS.BOOTSTRAP ,TAGS.LARAVEL, TAGS.CSS, TAGS.JQUERY, TAGS.MYSQL],
+    },
+    {
+        title: "Historial Académico Universidad Iberoamericana",
+        description:
+            "Página de consultas para cada estudiante de la universidad Iberoamericana, desarrollada con Laravel. Ingresa este id para visualizar mejor 100111592.",
+        link: "https://moocs.ibero.edu.co/hermes/front/public/index.php/historialestudiante",
+        github: "",
+        image: "../projects/Historial.jpg",
+        tags: [TAGS.HTML, TAGS.BOOTSTRAP ,TAGS.LARAVEL, TAGS.CSS, TAGS.JQUERY, TAGS.MYSQL],
+    },
+    {
+        title: "CRUD php",
+        description:
+            "Prueba técnica (CRUD - Create - Read - Update - Delete) desarrollada con php nativo.",
+        link: "https://github.com/rubencharry/Prueba-t-cnica---Universidad-Iberoamericana/tree/master",
+        image: "../projects/CRUD php.jpg",
+        tags: [TAGS.PHP, TAGS.BOOTSTRAP, TAGS.CSS, TAGS.JQUERY, TAGS.MYSQL],
+    },
+    {
+        title: "Página fisioterapia",
+        description:
+            "Página informativa sobre clínica fisioterapeutica, desarrollado con WordPress.",
+        link: "https://fisioterapiamariac.com/",
+        image: "../projects/Proyecto fisioterapia.jpg",
+        tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR, TAGS.PHP],
+    }
+];
+---
+
+{
+    PROJECTS.map(({ title, description, tags, image, link }) => (
+        <article class="mb-10">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>            
+            <p class="text-lg mb-4 text-pretty">Puedes ingresar <a href={link} target="_blank" class="underline ...">aquí</a>.</p>
+            
+            <ul class="flex gap-x-4 flex-row mb-4">
+                {tags.map((tag) => (
+                    <li>
+                        <span
+                            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                        >
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                src={image}
+                class="rounded shadow 2xl shadow-white/10"
+                alt="Captura de pantalla del proyecto"
+            />
+        </article>
+    ))
+}
+
+<script>
+
+
+</script>

@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+    date: "Actualmente...",
+    title: "Desarrollador Full Stack",
+    description:
+      "Desarrollo de la automatización integral para la planificación y gestión de matrículas universitarias, optimizando el proceso para los estudiantes de la universidad. Desarrollé y hago mantenimiento constante a la interfaz front-end de la plataforma, permitiendo la visualización y gestión eficiente de información personalizada basada en roles de usuario.",
+    },
+    {
+    date: "Abril 2023",
+    title: "Freelance",
+    description:
+      "Diseñé una página web para una clínicia de fisioterapia, desde su prototipo de alta fidelidad en figma hasta su desarrollo web. ",
+    }
+
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-3">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>

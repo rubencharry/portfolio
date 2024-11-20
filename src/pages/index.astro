@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialPill from '../components/SocialPill.astro';
+import LinkeInIcon from '../components/icons/LinkedIn.astro';
+import Briefcase from '../components/icons/Briefcase.astro';
+import Code from '../components/icons/Code.astro';
+import ProfileCheck from "../components/icons/ProfileCheck.astro"
+import MailIcon from '../components/icons/Mail.astro';
+import AboutMe from "../components/AboutMe.astro"
+import Experience from '../components/Experience.astro'
+import Proyects from '../components/Projects.astro'
+import SectionContainer from '../components/SectionContainer.astro'
+---
+
+<Layout 
+title="Portfolio Rubén Charry - Desarrollador de Software"
+description="Portafolio de proyectos."
+>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-24">
+			<div class="flex flex-col-reverse lg:flex-row justify-between items-center lg:items-start gap-10">
+				<!-- Contenido a la izquierda -->
+				<div class="text-left max-w-xl">
+					<h1 class="text-white text-4xl md:text-6xl lg:text-7xl font-bold pb-6 lg:pb-10"> 
+						Hi, I am Michael Murgueitio
+					</h1>
+					<h3 class="text-lg md:text-xl lg:text-2xl text-wrap max-w-[700px]">
+						<span class="text-yellow-200">Software Developer.</span> 10 years experiences From Bogotá, Colombia. 
+					</h3>
+					<nav class="flex gap-4 mt-8 flex-wrap">
+						<SocialPill href="https://www.linkedin.com/in/ruben-charry/">
+							<LinkeInIcon class="size-4 md:size-6"/>
+							LinkedIn
+						</SocialPill>
+						<SocialPill>
+							<MailIcon class="size-4 md:size-6"/>
+							Lawliet0316@gmail
+						</SocialPill>
+					</nav>
+				</div>
+				
+				<!-- Imagen a la derecha -->
+				<div class="w-full lg:w-auto">
+					<img
+						class="rounded-lg w-48 h-48 md:w-60 md:h-60 lg:w-80 lg:h-80 object-cover"
+						src="/foto.jpg"
+						alt="Foto Rubén Charry"
+					/>
+				</div>
+			</div>
+		</SectionContainer>
+		
+		<SectionContainer id="sobre-mi" class="pb-24">
+			<h2
+			  class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-white"
+			>
+			  <ProfileCheck class="size-8" />
+			  Sobre mí
+			</h2>
+			<AboutMe />
+		  </SectionContainer>
+
+		<SectionContainer id="experiencia" class="pb-24">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
+				<Briefcase class="size-6"/>
+				Experiencia laboral</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos" >
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
+				<Code class="size-6"/>
+				Proyectos</h2>
+			<Proyects />
+		</SectionContainer>
+	</main>
+</Layout>
+
+
